@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface Users : NSObject
-
+{
+    NSMutableArray *userViewCount;
+}
 
 + (NSArray *)list:(NSNumber *)page;
 - (void)incrementViewCount:(NSNumber *)identifier;
