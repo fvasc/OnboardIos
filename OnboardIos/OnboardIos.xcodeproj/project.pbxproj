@@ -10,6 +10,7 @@
 		4DCE4A701CDA256B003AD2CE /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCE4A6F1CDA256B003AD2CE /* Users.m */; };
 		4DCE4A7B1CDA2A1B003AD2CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCE4A791CDA2A1B003AD2CE /* ViewController.m */; };
 		4DCE4A7C1CDA2A1B003AD2CE /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCE4A7A1CDA2A1B003AD2CE /* ViewController.xib */; };
+		4DCE4A811CDA866C003AD2CE /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCE4A7F1CDA866C003AD2CE /* DetailsViewController.xib */; };
 		5B24E4691A80FBB700230072 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B24E4681A80FBB700230072 /* Constants.m */; };
 		5BECD2931A6FEF2D00A48259 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BECD28D1A6FEF2D00A48259 /* Images.xcassets */; };
 		5BECD2941A6FEF2D00A48259 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BECD28E1A6FEF2D00A48259 /* LaunchScreen.xib */; };
@@ -28,6 +29,8 @@
 		4DCE4A781CDA2A1B003AD2CE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4DCE4A791CDA2A1B003AD2CE /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4DCE4A7A1CDA2A1B003AD2CE /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		4DCE4A7D1CDA866C003AD2CE /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		4DCE4A7F1CDA866C003AD2CE /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		5B24E4671A80FBB700230072 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		5B24E4681A80FBB700230072 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		5BAC04961A695923004805CC /* OnboardIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnboardIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +145,8 @@
 				4DCE4A781CDA2A1B003AD2CE /* ViewController.h */,
 				4DCE4A791CDA2A1B003AD2CE /* ViewController.m */,
 				4DCE4A7A1CDA2A1B003AD2CE /* ViewController.xib */,
+				4DCE4A7D1CDA866C003AD2CE /* DetailsViewController.h */,
+				4DCE4A7F1CDA866C003AD2CE /* DetailsViewController.xib */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				5BECD2951A6FEF2D00A48259 /* Main.storyboard in Resources */,
 				5BECD2941A6FEF2D00A48259 /* LaunchScreen.xib in Resources */,
 				5BECD2931A6FEF2D00A48259 /* Images.xcassets in Resources */,
+				4DCE4A811CDA866C003AD2CE /* DetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

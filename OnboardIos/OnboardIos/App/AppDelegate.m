@@ -21,9 +21,21 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    [self.window setRootViewController:[ViewController new]];
-    [self.window makeKeyAndVisible];
+    //[self.window setRootViewController:[ViewController new]];
+    //[self.window makeKeyAndVisible];
     NSLog(@"%@", [Users list:@1]);
+    
+    ViewController *viewController = [[ViewController alloc] init];
+    // Create an instance of a UINavigationController
+    // its stack contains only itemsViewController
+    UINavigationController *navController = [[UINavigationController alloc]
+    
+    initWithRootViewController:viewController];
+    // You can now release the itemsViewController here,
+    // UINavigationController will retain it
+    // Place navigation controller's view in the window hierarchy
+    [[self window] setRootViewController:navController];
+    [[self window] makeKeyAndVisible];
     return YES;
 }
 

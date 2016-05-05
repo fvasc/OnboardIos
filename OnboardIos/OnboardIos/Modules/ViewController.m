@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Users.h"
+#import "DetailsViewController.h"
 
 @interface ViewController ()
 
@@ -67,6 +68,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView  didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.textLabel.font=[UIFont fontWithName:@"Arial Rounded MT Bold"  size:11.0];
     
@@ -77,6 +79,21 @@
     [_users incrementViewCount:identifier];
     int count = [[_users getViewCount:identifier] intValue];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"ID: %@ - Count: %d", identifier, count];
+    /*
+    DetailsViewController *details = [[DetailsViewController alloc] initWithNibName:@"DetailsViewController" bundle:nil];
+    [self.navigationController pushViewController:details animated:YES];
+    [details release];*/
+    DetailsViewController  *detailViewController =
+    [[DetailsViewController alloc] init];
+    
+    NSArray *possessions = [[PossessionStore defaultStore] allPossessions];
+    // Give detail view controller a pointer to the possession object in row
+    [detailViewController setPossession:
+     [possessions objectAtIndex:[indexPath row]]];
+    
+    // Push it onto the top of the navigation controller's stack
+    [[self navigationController] pushViewController:detailViewController
+                                           animated:YES];
 }
 
 
