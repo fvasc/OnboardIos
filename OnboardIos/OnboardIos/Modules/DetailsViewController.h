@@ -10,10 +10,12 @@
 
 @class NSDictionary;
 
-@interface DetailsViewController : UIViewController
+@interface DetailsViewController : UIViewController  <UITableViewDelegate, UITableViewDataSource>
 {
     NSDictionary *dict;
+    __weak IBOutlet UITableView *tableview;
 }
+
 @property (nonatomic, retain) NSDictionary *dict;
 
 @end

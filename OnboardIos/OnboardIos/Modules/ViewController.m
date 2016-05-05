@@ -23,11 +23,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //criando a relacao do datasource e delegate com o componente da nib
     _tableview.dataSource = self;
     _tableview.delegate = self;
+    
+    // limitar o scroll com relacao aos dados existentes
     _tableview.bounces = NO;
+    
+    
     _users = (Users*)[[Users alloc] init];
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,15 +57,16 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifer];
     }
     
-    // Deciding which data to put into this particular cell.
-    // If it the first row, the data input will be "Data1" from the array.
     NSUInteger row = [indexPath row];
     NSDictionary *dict = [[Users list:@1] objectAtIndex:row];
     
+    //informacao de cada linha
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", dict[@"first_name"], dict[@"last_name"]];
     NSNumber *identifier = dict[@"id"];
     int count = [[_users getViewCount:identifier] intValue];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"ID: %@ - Count: %d", identifier, count];
+    
+    //quando o usuario ainda nao foi visualizado
     if (count==0)
     {
         cell.textLabel.font=[UIFont fontWithName:@"Arial Rounded MT Bold"  size:15.0];
