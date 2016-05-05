@@ -27,12 +27,14 @@
     //criando a relacao do datasource e delegate com o componente da nib
     _tableview.dataSource = self;
     _tableview.delegate = self;
+
     
     // limitar o scroll com relacao aos dados existentes
     _tableview.bounces = NO;
     
     
     _users = (Users*)[[Users alloc] init];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,7 +52,6 @@
 {
     static NSString *CellIdentifer = @"CellIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
-    
     // Using a cell identifier will allow your app to reuse cells as they come and go from the screen.
     if (cell == nil)
     {
@@ -59,6 +60,7 @@
     
     NSUInteger row = [indexPath row];
     NSDictionary *dict = [[Users list:@1] objectAtIndex:row];
+
     
     //informacao de cada linha
     cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", dict[@"first_name"], dict[@"last_name"]];
@@ -67,6 +69,7 @@
     cell.detailTextLabel.text = [NSString stringWithFormat:@"ID: %@ - Count: %d", identifier, count];
     
     //quando o usuario ainda nao foi visualizado
+
     if (count==0)
     {
         cell.textLabel.font=[UIFont fontWithName:@"Arial Rounded MT Bold"  size:15.0];
@@ -75,7 +78,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView  didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.textLabel.font=[UIFont fontWithName:@"Arial Rounded MT Bold"  size:11.0];
     
@@ -95,6 +98,7 @@
     // Push it onto the top of the navigation controller's stack
     [[self navigationController] pushViewController:detailViewController
                                            animated:YES];
+
 }
 
 
