@@ -8,33 +8,38 @@
 
 #import "ViewController.h"
 #import "Users.h"
+#import "DetailsViewController.h"
 
 @interface ViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    Users *_users;
+}
 
 
 @synthesize tableView = _tableview;
-@synthesize users;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //criando a relacao do datasource e delegate com o componente da nib
     _tableview.dataSource = self;
     _tableview.delegate = self;
-    // Do any additional setup after loading the view from its nib.
+
+    
+    // limitar o scroll com relacao aos dados existentes
+    _tableview.bounces = NO;
+    
+    
+    _users = (Users*)[[Users alloc] init];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of anyresources that can be recreated.
-}
-
-- (void)configureView
-{
-    // Update the user interface for the detail item.
-    self.users = [Users list:@1];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -47,20 +52,55 @@
 {
     static NSString *CellIdentifer = @"CellIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
-    
     // Using a cell identifier will allow your app to reuse cells as they come and go from the screen.
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifer];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifer];
     }
     
-    // Deciding which data to put into this particular cell.
-    // If it the first row, the data input will be "Data1" from the array.
     NSUInteger row = [indexPath row];
     NSDictionary *dict = [[Users list:@1] objectAtIndex:row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", dict[@"first_name"], dict[@"last_name"]];
+
     
+    //informacao de cada linha
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", dict[@"first_name"], dict[@"last_name"]];
+    NSNumber *identifier = dict[@"id"];
+    int count = [[_users getViewCount:identifier] intValue];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"ID: %@ - Count: %d", identifier, count];
+    
+    //quando o usuario ainda nao foi visualizado
+
+    if (count==0)
+    {
+        cell.textLabel.font=[UIFont fontWithName:@"Arial Rounded MT Bold"  size:15.0];
+    }
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView  didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.textLabel.font=[UIFont fontWithName:@"Arial Rounded MT Bold"  size:11.0];
+    
+    NSUInteger row = [indexPath row];
+    NSDictionary *dict = [[Users list:@1] objectAtIndex:row];
+    NSNumber *identifier = dict[@"id"];
+
+    [_users incrementViewCount:identifier];
+    int count = [[_users getViewCount:identifier] intValue];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"ID: %@ - Count: %d", identifier, count];
+   
+    DetailsViewController  *detailViewController = [[DetailsViewController alloc] init];
+    
+    //envia dictionary para o controller do detalhe
+    [detailViewController setDict:dict];
+    
+    // Push it onto the top of the navigation controller's stack
+    [[self navigationController] pushViewController:detailViewController
+                                           animated:YES];
+
+}
+
+
 
 @end
