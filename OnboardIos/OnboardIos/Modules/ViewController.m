@@ -45,6 +45,7 @@
 {
     static NSString *CellIdentifer = @"CellIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifer];
+    
     // Using a cell identifier will allow your app to reuse cells as they come and go from the screen.
     if (cell == nil)
     {
@@ -79,17 +80,11 @@
     [_users incrementViewCount:identifier];
     int count = [[_users getViewCount:identifier] intValue];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"ID: %@ - Count: %d", identifier, count];
-    /*
-    DetailsViewController *details = [[DetailsViewController alloc] initWithNibName:@"DetailsViewController" bundle:nil];
-    [self.navigationController pushViewController:details animated:YES];
-    [details release];*/
-    DetailsViewController  *detailViewController =
-    [[DetailsViewController alloc] init];
+   
+    DetailsViewController  *detailViewController = [[DetailsViewController alloc] init];
     
-    NSArray *possessions = [[PossessionStore defaultStore] allPossessions];
-    // Give detail view controller a pointer to the possession object in row
-    [detailViewController setPossession:
-     [possessions objectAtIndex:[indexPath row]]];
+    //envia dictionary para o controller do detalhe
+    [detailViewController setDict:dict];
     
     // Push it onto the top of the navigation controller's stack
     [[self navigationController] pushViewController:detailViewController

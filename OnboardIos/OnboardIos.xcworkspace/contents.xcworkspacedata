@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:OnboardIos/Modules/DetailsViewController.m">
+   </FileRef>
+   <FileRef
       location = "group:OnboardIos.xcodeproj">
    </FileRef>
    <FileRef

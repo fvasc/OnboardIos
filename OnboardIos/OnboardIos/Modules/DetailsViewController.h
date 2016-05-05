@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class Users;
+@class NSDictionary;
 
 @interface DetailsViewController : UIViewController
 {
-    Users *users;
+    NSDictionary *dict;
 }
-@property (nonatomic, retain) Users *users;
+@property (nonatomic, retain) NSDictionary *dict;
 
 @end

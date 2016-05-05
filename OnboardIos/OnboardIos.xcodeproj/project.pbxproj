@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D61B31C1CDBB72C002BC3FD /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D61B31B1CDBB72C002BC3FD /* DetailsViewController.m */; };
 		4DCE4A701CDA256B003AD2CE /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCE4A6F1CDA256B003AD2CE /* Users.m */; };
 		4DCE4A7B1CDA2A1B003AD2CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCE4A791CDA2A1B003AD2CE /* ViewController.m */; };
 		4DCE4A7C1CDA2A1B003AD2CE /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DCE4A7A1CDA2A1B003AD2CE /* ViewController.xib */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D61B31B1CDBB72C002BC3FD /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		4DCE4A6E1CDA256B003AD2CE /* Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
 		4DCE4A6F1CDA256B003AD2CE /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
 		4DCE4A721CDA26FC003AD2CE /* DebugMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugMacros.h; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				4DCE4A781CDA2A1B003AD2CE /* ViewController.h */,
 				4DCE4A791CDA2A1B003AD2CE /* ViewController.m */,
 				4DCE4A7A1CDA2A1B003AD2CE /* ViewController.xib */,
+				4D61B31B1CDBB72C002BC3FD /* DetailsViewController.m */,
 				4DCE4A7D1CDA866C003AD2CE /* DetailsViewController.h */,
 				4DCE4A7F1CDA866C003AD2CE /* DetailsViewController.xib */,
 			);
@@ -338,6 +341,7 @@
 				5BECD2971A6FEF2D00A48259 /* main.m in Sources */,
 				4DCE4A701CDA256B003AD2CE /* Users.m in Sources */,
 				5BFCA8D51A7928C5001B1BA5 /* HomeViewController.m in Sources */,
+				4D61B31C1CDBB72C002BC3FD /* DetailsViewController.m in Sources */,
 				5BFCA8DE1A792BE1001B1BA5 /* AppDelegate.m in Sources */,
 				5B24E4691A80FBB700230072 /* Constants.m in Sources */,
 			);
